@@ -1,0 +1,25 @@
+<header>
+    <button onclick="location.href='/new-post'">New Post</button>
+</header>
+
+<section class="phx-hero">
+  <h1>Welcome to this blog thing</h1>
+  <p>It's just a practice site</p>
+</section>
+
+<section class="row">
+    <h2 class="subtitle">Blog Posts</h2>
+    <div class="card-container">
+      <%= for post <- @posts do %>
+        <div class="card">
+          <div class="title-wrapper">
+            <a href="/blog/<%= post.slug%>">
+              <h3><%= post.title%></h3>
+            </a>
+            <button drab="click:remove_post" data-slug="<%= post.slug%>" class="alert-danger delete">delete</button>
+          </div>
+          <h6><%= post.subtitle%></h6>
+        </div>
+      <% end %>
+    </div>
+  </section>

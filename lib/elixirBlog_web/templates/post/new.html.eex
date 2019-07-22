@@ -1,0 +1,16 @@
+<%= form_for @changeset, Routes.post_path(@conn, :create), fn f -> %>
+  <label>
+    Title: <%= text_input f, :title %>
+    <%= error_tag f, :title %>
+  </label>
+  <label>
+    Subtitle: <%= text_input f, :subtitle %>
+    <%= error_tag f, :subtitle %>
+  </label>
+  <label>
+    Content: <%= textarea f, :content %>
+    <%= error_tag f, :content %>
+  </label>
+
+  <%= submit "Submit" %>
+<% end %>
