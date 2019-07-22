@@ -2,7 +2,7 @@ use Mix.Config
 
 # Configure your database
 config :elixirBlog, ElixirBlog.Repo,
-  username: "postgres",
+  username: "austin.bentley",
   password: "postgres",
   database: "elixirblog_dev",
   hostname: "localhost",

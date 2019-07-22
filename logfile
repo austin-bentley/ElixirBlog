@@ -1,0 +1,7 @@
+2019-07-22 15:21:31.573 MDT [18924] LOG:  listening on IPv6 address "::1", port 5432
+2019-07-22 15:21:31.573 MDT [18924] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2019-07-22 15:21:31.574 MDT [18924] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2019-07-22 15:21:31.587 MDT [18925] LOG:  database system was shut down at 2019-07-22 15:21:23 MDT
+2019-07-22 15:21:31.590 MDT [18924] LOG:  database system is ready to accept connections
+2019-07-22 15:21:40.657 MDT [18953] ERROR:  database "elixirblog_dev" does not exist
+2019-07-22 15:21:40.657 MDT [18953] STATEMENT:  DROP DATABASE "elixirblog_dev"
