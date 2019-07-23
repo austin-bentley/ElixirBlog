@@ -21,17 +21,17 @@ defmodule ElixirBlogWeb.PostController do
     |> Post.changeset(post_params)
     |> Repo.insert()
     |> case do
-      {:ok, post} ->
+      {:ok, _post} ->
         conn
         |> put_flash(:info, "Post created successfully.")
         |> redirect(to: "/")
-  
+
       {:error, %Ecto.Changeset{} = changeset} ->
         render(conn, "new.html", changeset: changeset)
     end
   end
 
-  defp add_slug(params) do 
+  defp add_slug(params) do
     slug = slugified_title(params["title"])
     Map.put_new(params, "slug", slug)
   end

@@ -9,7 +9,7 @@ defmodule ElixirBlogWeb.PageCommander do
     Repo.get_by(Post, slug: sender["dataset"]["slug"])
     |> Repo.delete()
     |> case do
-      {:ok, post} ->
+      {:ok, _post} ->
         Drab.Browser.redirect_to(socket, "/")
     end
   end
