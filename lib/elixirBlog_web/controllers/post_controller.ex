@@ -4,7 +4,7 @@ defmodule ElixirBlogWeb.PostController do
   alias ElixirBlog.Repo
   alias ElixirBlog.Blog.Post
 
-  def show(conn, %{"slug" => slug}) do
+  def show(conn, %{"id" => slug}) do
     postBody = Repo.get_by(Post, slug: slug)
     IO.inspect(postBody, label: "paramssssss")
     render(conn, "index.html", postData: postBody)
@@ -28,6 +28,22 @@ defmodule ElixirBlogWeb.PostController do
 
       {:error, %Ecto.Changeset{} = changeset} ->
         render(conn, "new.html", changeset: changeset)
+    end
+  end
+
+  def delete(conn, %{"id" => slug}) do
+    IO.inspect(slug, label: "oneeee")
+    Repo.get_by(Post, slug: slug)
+    |> Repo.delete()
+    |> case do
+      {:ok, _post} ->
+        conn
+        |> put_flash(:info, "Post deleted successfully.")
+        |> redirect(to: "/")
+
+      {:error, _error} ->
+        conn
+        |> put_flash(:info, "Something went wrong")
     end
   end
 

@@ -1,5 +1,12 @@
 <header>
-    <button onclick="location.href='/new-post'">New Post</button>
+    <%= if signed_in?(@conn) do %>
+      <%= link "New post", to: Routes.post_path(@conn, :new) %>
+      <%= button "Sign out", to: Routes.session_path(@conn, :delete), method: :delete %>
+    <% else %>
+      <%= link "Sign In", to: Routes.session_path(@conn, :new) %>
+      |
+      <%= link "Sign up", to: Routes.user_path(@conn, :new) %>
+    <% end %>
 </header>
 
 <section class="phx-hero">
@@ -16,7 +23,9 @@
             <a href="/blog/<%= post.slug%>">
               <h3><%= post.title%></h3>
             </a>
-            <button drab="click:remove_post" data-slug="<%= post.slug%>" class="alert-danger delete">delete</button>
+            <%= if signed_in?(@conn) do %>
+              <%= button "delete", to: Routes.post_path(@conn, :delete, post.slug), method: :delete, class: "alert-danger delete"%>
+            <% end %>
           </div>
           <h6><%= post.subtitle%></h6>
         </div>

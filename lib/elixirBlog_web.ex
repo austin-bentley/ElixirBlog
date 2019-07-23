@@ -41,6 +41,7 @@ defmodule ElixirBlogWeb do
 
       import ElixirBlogWeb.ErrorHelpers
       import ElixirBlogWeb.Gettext
+      import ElixirBlogWeb.Helpers.Auth, only: [signed_in?: 1]
       alias ElixirBlogWeb.Router.Helpers, as: Routes
     end
   end

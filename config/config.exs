@@ -17,18 +17,6 @@ config :elixirBlog, ElixirBlogWeb.Endpoint,
   render_errors: [view: ElixirBlogWeb.ErrorView, accepts: ~w(html json)],
   pubsub: [name: ElixirBlog.PubSub, adapter: Phoenix.PubSub.PG2]
 
-# Configures Drab
-config :drab, ElixirBlogWeb.Endpoint,
-  otp_app: :elixirBlog
-
-# Configures default Drab file extension
-config :phoenix, :template_engines,
-  drab: Drab.Live.Engine
-
-# Configures Drab for webpack
-config :drab, ElixirBlogWeb.Endpoint,
-  js_socket_constructor: "window.__socket"
-
 # Configures Elixir's Logger
 config :logger, :console,
   format: "$time $metadata[$level] $message\n",

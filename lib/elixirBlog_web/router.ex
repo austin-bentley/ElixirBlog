@@ -17,9 +17,11 @@ defmodule ElixirBlogWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :index
-    get "/blog/:slug", PostController, :show
-    get "/new-post", PostController, :new
-    post "/", PostController, :create
+    resources "/blog", PostController, only: [:create, :new, :show, :delete]
+    resources "/registrations", UserController, only: [:create, :new]
+    get "/sign-in", SessionController, :new
+    post "/sign-in", SessionController, :create
+    delete "/sign-out", SessionController, :delete
   end
 
   # Other scopes may use custom stacks.

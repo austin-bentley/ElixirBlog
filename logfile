@@ -5,3 +5,9 @@
 2019-07-22 15:21:31.590 MDT [18924] LOG:  database system is ready to accept connections
 2019-07-22 15:21:40.657 MDT [18953] ERROR:  database "elixirblog_dev" does not exist
 2019-07-22 15:21:40.657 MDT [18953] STATEMENT:  DROP DATABASE "elixirblog_dev"
+2019-07-23 11:25:23.352 MDT [51528] ERROR:  duplicate key value violates unique constraint "users_username_index"
+2019-07-23 11:25:23.352 MDT [51528] DETAIL:  Key (username)=(Austin) already exists.
+2019-07-23 11:25:23.352 MDT [51528] STATEMENT:  INSERT INTO "users" ("encrypted_password","username","inserted_at","updated_at") VALUES ($1,$2,$3,$4) RETURNING "id"
+2019-07-23 11:25:37.538 MDT [51526] ERROR:  duplicate key value violates unique constraint "users_username_index"
+2019-07-23 11:25:37.538 MDT [51526] DETAIL:  Key (username)=(Austin) already exists.
+2019-07-23 11:25:37.538 MDT [51526] STATEMENT:  INSERT INTO "users" ("encrypted_password","username","inserted_at","updated_at") VALUES ($1,$2,$3,$4) RETURNING "id"
