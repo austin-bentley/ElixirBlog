@@ -1,9 +1,8 @@
-
 <div class="jumbotron">
     <h1><%= @postData.title %></h1>
     <h2><%= @postData.subtitle %></h2>
-  </div>
+</div>
   
-  <div class="post-content">
-      <h1><%= @postData.content %></h1>
+<div class="post-content">
+    <h1><%= @postData.content %></h1>
 </div>

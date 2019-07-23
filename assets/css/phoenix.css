@@ -27,41 +27,9 @@ select {
   width: auto;
 }
 
-.subtitle {
-  width: 100%;
-}
-
-.jumbotron h1 {
-  font-size: 54px;
-  margin-top: 24px;
-  text-align: center;
-}
-
-.jumbotron h2 {
-  text-align: center;
-}
-
 .post-content h1 {
   font-size: 20px;
   text-align: left;
-}
-
-.card-container {
-  display: flex;
-  text-align: left;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.card {
-  border-radius: 4px;
-  border: 1px solid lightgray;
-  margin: 12px;
-  padding: 12px;
-}
-
-.title-wrapper {
-  display: flex;
 }
 
 .card a:hover {

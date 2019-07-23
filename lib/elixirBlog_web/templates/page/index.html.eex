@@ -15,20 +15,20 @@
 </section>
 
 <section class="row">
-    <h2 class="subtitle">Blog Posts</h2>
-    <div class="card-container">
-      <%= for post <- @posts do %>
-        <div class="card">
-          <div class="title-wrapper">
-            <a href="/blog/<%= post.slug%>">
-              <h3><%= post.title%></h3>
-            </a>
-            <%= if signed_in?(@conn) do %>
-              <%= button "delete", to: Routes.post_path(@conn, :delete, post.slug), method: :delete, class: "alert-danger delete"%>
-            <% end %>
-          </div>
-          <h6><%= post.subtitle%></h6>
+  <h2 class="subtitle">Blog Posts</h2>
+  <div class="card-container">
+    <%= for post <- @posts do %>
+      <div class="card">
+        <div class="title-wrapper">
+          <a href="/blog/<%= post.slug%>">
+            <h3><%= post.title%></h3>
+          </a>
+          <%= if signed_in?(@conn) do %>
+            <%= button "delete", to: Routes.post_path(@conn, :delete, post.slug), method: :delete, class: "alert-danger delete"%>
+          <% end %>
         </div>
-      <% end %>
-    </div>
-  </section>
+        <h6><%= post.subtitle%></h6>
+      </div>
+    <% end %>
+  </div>
+</section>
