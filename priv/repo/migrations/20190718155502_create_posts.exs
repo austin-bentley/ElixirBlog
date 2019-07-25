@@ -7,8 +7,11 @@ defmodule ElixirBlog.Repo.Migrations.CreatePosts do
       add :subtitle, :string
       add :content, :text
       add :slug, :string
+      add :author_id, :integer
 
       timestamps()
     end
+
+    create unique_index(:posts, [:title, :slug])
   end
 end

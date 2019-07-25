@@ -4,7 +4,7 @@ defmodule ElixirBlogWeb.PageController do
   alias ElixirBlog.Blog.Post
 
   def index(conn, _params) do
-    blogPosts = Repo.all(Post)
-    render(conn, "index.html", posts: blogPosts)
+    blog_posts = Repo.all(Post)
+    render(conn, "index.html", posts: blog_posts)
   end
 end

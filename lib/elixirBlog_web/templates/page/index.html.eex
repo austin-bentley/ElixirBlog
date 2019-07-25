@@ -23,7 +23,7 @@
           <a href="/blog/<%= post.slug%>">
             <h3><%= post.title%></h3>
           </a>
-          <%= if signed_in?(@conn) do %>
+          <%= if signed_in?(@conn) && is_owner?(@conn, post.author_id) do %>
             <%= button "delete", to: Routes.post_path(@conn, :delete, post.slug), method: :delete, class: "alert-danger delete"%>
           <% end %>
         </div>

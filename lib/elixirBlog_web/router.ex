@@ -13,19 +13,29 @@ defmodule ElixirBlogWeb.Router do
     plug :accepts, ["json"]
   end
 
+  # auth routes
   scope "/", ElixirBlogWeb do
-    pipe_through :browser
+    pipe_through [:browser, ElixirBlogWeb.Plugs.Auth]
 
-    get "/", PageController, :index
-    resources "/blog", PostController, only: [:create, :new, :show, :delete]
-    resources "/registrations", UserController, only: [:create, :new]
-    get "/sign-in", SessionController, :new
-    post "/sign-in", SessionController, :create
+    resources "/blog", PostController, only: [:create, :new, :delete]
     delete "/sign-out", SessionController, :delete
   end
 
-  # Other scopes may use custom stacks.
-  # scope "/api", ElixirBlogWeb do
-  #   pipe_through :api
-  # end
+  # guest routes
+  scope "/", ElixirBlogWeb do
+    pipe_through [:browser, ElixirBlogWeb.Plugs.Guest]
+
+    get "/blog/:id", PostController, :show
+    resources "/registrations", UserController, only: [:create, :new]
+    get "/sign-in", SessionController, :new
+    post "/sign-in", SessionController, :create
+  end
+
+  # shared routes
+  scope "/", ElixirBlogWeb do
+    pipe_through [:browser]
+    get "/", PageController, :index
+  end
 end
+
+# delete still broken

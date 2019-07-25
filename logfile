@@ -11,3 +11,38 @@
 2019-07-23 11:25:37.538 MDT [51526] ERROR:  duplicate key value violates unique constraint "users_username_index"
 2019-07-23 11:25:37.538 MDT [51526] DETAIL:  Key (username)=(Austin) already exists.
 2019-07-23 11:25:37.538 MDT [51526] STATEMENT:  INSERT INTO "users" ("encrypted_password","username","inserted_at","updated_at") VALUES ($1,$2,$3,$4) RETURNING "id"
+2019-07-24 08:54:34.579 MDT [68993] ERROR:  duplicate key value violates unique constraint "users_username_index"
+2019-07-24 08:54:34.579 MDT [68993] DETAIL:  Key (username)=(AustinBCD) already exists.
+2019-07-24 08:54:34.579 MDT [68993] STATEMENT:  INSERT INTO "users" ("encrypted_password","username","inserted_at","updated_at") VALUES ($1,$2,$3,$4) RETURNING "id"
+2019-07-24 09:12:10.126 MDT [87369] ERROR:  column p0.author does not exist at character 69
+2019-07-24 09:12:10.126 MDT [87369] STATEMENT:  SELECT p0."id", p0."title", p0."subtitle", p0."content", p0."slug", p0."author", p0."inserted_at", p0."updated_at" FROM "posts" AS p0
+2019-07-24 09:13:30.785 MDT [87634] ERROR:  column "author" of relation "posts" does not exist at character 22
+2019-07-24 09:13:30.785 MDT [87634] STATEMENT:  INSERT INTO "posts" ("author","content","slug","subtitle","title","inserted_at","updated_at") VALUES ($1,$2,$3,$4,$5,$6,$7) RETURNING "id"
+2019-07-24 09:15:40.124 MDT [87942] ERROR:  column "author" of relation "posts" does not exist at character 22
+2019-07-24 09:15:40.124 MDT [87942] STATEMENT:  INSERT INTO "posts" ("author","content","slug","subtitle","title","inserted_at","updated_at") VALUES ($1,$2,$3,$4,$5,$6,$7) RETURNING "id"
+2019-07-24 09:16:29.875 MDT [87972] ERROR:  column p0.author does not exist at character 69
+2019-07-24 09:16:29.875 MDT [87972] STATEMENT:  SELECT p0."id", p0."title", p0."subtitle", p0."content", p0."slug", p0."author", p0."inserted_at", p0."updated_at" FROM "posts" AS p0
+2019-07-24 11:41:37.556 MDT [88305] ERROR:  column "author_id" of relation "posts" does not exist at character 22
+2019-07-24 11:41:37.556 MDT [88305] STATEMENT:  INSERT INTO "posts" ("author_id","content","subtitle","title","inserted_at","updated_at") VALUES ($1,$2,$3,$4,$5,$6) RETURNING "id"
+2019-07-24 12:07:23.412 MDT [5272] ERROR:  duplicate key value violates unique constraint "users_username_index"
+2019-07-24 12:07:23.412 MDT [5272] DETAIL:  Key (username)=(User1!) already exists.
+2019-07-24 12:07:23.412 MDT [5272] STATEMENT:  INSERT INTO "users" ("encrypted_password","username","inserted_at","updated_at") VALUES ($1,$2,$3,$4) RETURNING "id"
+2019-07-24 12:08:25.865 MDT [5584] ERROR:  duplicate key value violates unique constraint "users_username_index"
+2019-07-24 12:08:25.865 MDT [5584] DETAIL:  Key (username)=(User1!) already exists.
+2019-07-24 12:08:25.865 MDT [5584] STATEMENT:  INSERT INTO "users" ("encrypted_password","username","inserted_at","updated_at") VALUES ($1,$2,$3,$4) RETURNING "id"
+2019-07-24 15:19:49.261 MDT [24483] LOG:  unexpected EOF on client connection with an open transaction
+2019-07-25 09:17:35.040 MDT [44444] ERROR:  duplicate key value violates unique constraint "posts_title_index"
+2019-07-25 09:17:35.040 MDT [44444] DETAIL:  Key (title)=(black metal) already exists.
+2019-07-25 09:17:35.040 MDT [44444] STATEMENT:  INSERT INTO "posts" ("author_id","content","slug","subtitle","title","inserted_at","updated_at") VALUES ($1,$2,$3,$4,$5,$6,$7) RETURNING "id"
+2019-07-25 09:30:34.979 MDT [46484] ERROR:  duplicate key value violates unique constraint "posts_title_slug_index"
+2019-07-25 09:30:34.979 MDT [46484] DETAIL:  Key (title, slug)=(oneTWOThere, onetwothere) already exists.
+2019-07-25 09:30:34.979 MDT [46484] STATEMENT:  INSERT INTO "posts" ("author_id","content","slug","subtitle","title","inserted_at","updated_at") VALUES ($1,$2,$3,$4,$5,$6,$7) RETURNING "id"
+2019-07-25 09:33:31.217 MDT [46484] ERROR:  duplicate key value violates unique constraint "posts_title_slug_index"
+2019-07-25 09:33:31.217 MDT [46484] DETAIL:  Key (title, slug)=(oneTWOThere, onetwothere) already exists.
+2019-07-25 09:33:31.217 MDT [46484] STATEMENT:  INSERT INTO "posts" ("author_id","content","slug","subtitle","title","inserted_at","updated_at") VALUES ($1,$2,$3,$4,$5,$6,$7) RETURNING "id"
+2019-07-25 09:33:46.807 MDT [46481] ERROR:  duplicate key value violates unique constraint "posts_title_slug_index"
+2019-07-25 09:33:46.807 MDT [46481] DETAIL:  Key (title, slug)=(oneTWOThere, onetwothere) already exists.
+2019-07-25 09:33:46.807 MDT [46481] STATEMENT:  INSERT INTO "posts" ("author_id","content","slug","subtitle","title","inserted_at","updated_at") VALUES ($1,$2,$3,$4,$5,$6,$7) RETURNING "id"
+2019-07-25 09:34:20.611 MDT [46475] ERROR:  duplicate key value violates unique constraint "posts_title_slug_index"
+2019-07-25 09:34:20.611 MDT [46475] DETAIL:  Key (title, slug)=(oneTWOThere, onetwothere) already exists.
+2019-07-25 09:34:20.611 MDT [46475] STATEMENT:  INSERT INTO "posts" ("author_id","content","slug","subtitle","title","inserted_at","updated_at") VALUES ($1,$2,$3,$4,$5,$6,$7) RETURNING "id"
